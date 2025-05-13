@@ -1,0 +1,13 @@
+<article class="border p-4 rounded-lg">
+  <img
+    [src]="product.imageUrl"
+    alt="{{ product.name }}"
+    class="w-full h-32 object-cover mb-2"
+  />
+  <h3 class="font-semibold">{{ product.name }}</h3>
+  <p class="text-sm mb-2">{{ product.description }}</p>
+  <div class="flex justify-between items-center">
+    <span class="font-bold">€ {{ product.price }}</span>
+    <button (click)="onAdd()" class="px-2 py-1 border rounded">Aggiungi</button>
+  </div>
+</article>
