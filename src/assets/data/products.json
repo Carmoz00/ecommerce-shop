@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "name": "Maglietta Angular",
+    "description": "100% cotone",
+    "price": 19.99,
+    "imageUrl": "assets/images/maglietta.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Tazza Dev",
+    "description": "Ceramica di alta qualità",
+    "price": 9.99,
+    "imageUrl": "assets/images/tazza.jpg"
+  }
+]
