@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ProductService } from '../../services/product.service';
 import { Product } from '../../models/product.model';
 import { ProductItemComponent } from '../../components/product-item/product-item.component';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-product-list',
@@ -10,27 +12,16 @@ import { ProductItemComponent } from '../../components/product-item/product-item
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.scss'],
 })
-export class ProductListComponent {
-  products: Product[] = [
-    {
-      id: 1,
-      name: 'Maglietta Angular',
-      description: '100% cotone',
-      price: 19.99,
-      imageUrl: 'https://via.placeholder.com/150',
-    },
-    {
-      id: 2,
-      name: 'Tazza Dev',
-      description: 'Ceramica di alta qualità',
-      price: 9.99,
-      imageUrl: 'https://via.placeholder.com/150',
-    },
-    // …altri dummy products
-  ];
+export class ProductListComponent implements OnInit {
+  products$!: Observable<Product[]>; // Usato "$" per convenzione Observable
+
+  constructor(private productService: ProductService) {}
+
+  ngOnInit(): void {
+    this.products$ = this.productService.getAll(); // Recupero dati da servizio
+  }
 
   onAddToCart(product: Product) {
     console.log('Aggiunto al carrello:', product);
-    // qui in seguito invocheremo il servizio carrello
   }
 }

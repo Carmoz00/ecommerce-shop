@@ -1,8 +1,10 @@
 <section class="grid grid-cols-1 md:grid-cols-3 gap-4">
-  <app-product-item
-    *ngFor="let p of products"
-    [product]="p"
-    (addToCart)="onAddToCart($event)"
-  >
-  </app-product-item>
+  <ng-container *ngIf="products$ | async as productList">
+    <app-product-item
+      *ngFor="let p of productList"
+      [product]="p"
+      (addToCart)="onAddToCart($event)"
+    >
+    </app-product-item>
+  </ng-container>
 </section>
