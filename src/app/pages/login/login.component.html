@@ -1,0 +1,33 @@
+<form
+  [formGroup]="form"
+  (ngSubmit)="onSubmit()"
+  class="max-w-sm mx-auto space-y-4 mt-8"
+>
+  <div>
+    <label>Username</label>
+    <input formControlName="username" class="w-full border p-2 rounded" />
+    <div
+      *ngIf="form.get('username')?.touched && form.get('username')?.invalid"
+      class="text-red-600 text-sm"
+    >
+      Username obbligatorio.
+    </div>
+  </div>
+  <div>
+    <label>Password</label>
+    <input
+      type="password"
+      formControlName="password"
+      class="w-full border p-2 rounded"
+    />
+    <div
+      *ngIf="form.get('password')?.touched && form.get('password')?.invalid"
+      class="text-red-600 text-sm"
+    >
+      Password obbligatoria.
+    </div>
+  </div>
+  <button type="submit" class="w-full py-2 border rounded font-bold">
+    Accedi
+  </button>
+</form>

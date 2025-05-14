@@ -7,7 +7,15 @@
   >
   <a routerLink="products" routerLinkActive="font-bold">Prodotti</a>
   <a routerLink="checkout" routerLinkActive="font-bold">Checkout</a>
-  <div class="ml-auto">
+
+  <div class="ml-auto flex items-center gap-4">
+    <ng-container *ngIf="!isLogged">
+      <a routerLink="login" routerLinkActive="font-bold">Accedi</a>
+    </ng-container>
+    <ng-container *ngIf="isLogged">
+      <button (click)="logout()" class="px-2 py-1 border rounded">Esci</button>
+    </ng-container>
+
     🛒 <span *ngIf="count">{{ count }}</span>
   </div>
 </nav>
