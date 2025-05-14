@@ -1,4 +1,4 @@
-<nav class="p-4 bg-gray-100 flex gap-4">
+<nav class="p-4 bg-gray-100 flex gap-4 items-center">
   <a
     routerLink=""
     routerLinkActive="font-bold"
@@ -6,4 +6,7 @@
     >Home</a
   >
   <a routerLink="products" routerLinkActive="font-bold">Prodotti</a>
+  <div class="ml-auto">
+    🛒 <span *ngIf="count">{{ count }}</span>
+  </div>
 </nav>
