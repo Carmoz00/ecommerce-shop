@@ -1,21 +1,18 @@
 @use "styles/variables" as vars;
-@use "styles/mixins" as mixins;
 
-nav {
-  background: vars.$primary;
+.site-header {
+  background-color: vars.$primary;
   color: white;
-
-  a {
+}
+.main-nav {
+  background-color: vars.$secondary;
+  a,
+  button {
     color: white;
     text-decoration: none;
     padding: 0.5rem 1rem;
-
-    &.font-bold {
-      border-bottom: 2px solid $secondary;
-    }
   }
-
-  .ml-auto {
-    margin-left: auto;
+  .font-bold {
+    border-bottom: 2px solid white;
   }
 }
