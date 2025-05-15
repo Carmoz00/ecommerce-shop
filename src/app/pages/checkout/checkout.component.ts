@@ -17,6 +17,7 @@ import { RouterLink } from '@angular/router';
 })
 export class CheckoutComponent implements OnInit {
   checkoutForm!: FormGroup;
+  submitted = false; // ← qui
 
   ngOnInit(): void {
     this.checkoutForm = new FormGroup({
@@ -28,6 +29,7 @@ export class CheckoutComponent implements OnInit {
   }
 
   onSubmit(): void {
+    this.submitted = true; // ← segna l’invio
     if (this.checkoutForm.valid) {
       console.log('Ordine inviato:', this.checkoutForm.value);
       // Qui potrai svuotare il carrello e navigare a conferma ordine

@@ -1,21 +1,28 @@
-<nav class="p-4 bg-gray-100 flex gap-4 items-center">
-  <a
-    routerLink=""
-    routerLinkActive="font-bold"
-    [routerLinkActiveOptions]="{ exact: true }"
-    >Home</a
-  >
-  <a routerLink="products" routerLinkActive="font-bold">Prodotti</a>
-  <a routerLink="checkout" routerLinkActive="font-bold">Checkout</a>
-
-  <div class="ml-auto flex items-center gap-4">
+<div class="site-header text-center py-4 bg-primary text-white">
+  <h1 class="text-3xl font-bold">Ecommerce - Shop</h1>
+</div>
+<nav
+  class="main-nav flex items-center justify-between bg-primary-light text-white px-6 py-2"
+>
+  <div class="nav-left flex gap-4">
+    <a routerLink="checkout" routerLinkActive="font-bold">Checkout</a>
+    <a routerLink="cart" routerLinkActive="font-bold">Carrello ({{ count }})</a>
+  </div>
+  <div class="nav-center flex gap-4">
+    <a
+      routerLink=""
+      routerLinkActive="font-bold"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >Home</a
+    >
+    <a routerLink="products" routerLinkActive="font-bold">Prodotti</a>
+  </div>
+  <div class="nav-right flex gap-4">
     <ng-container *ngIf="!isLogged">
       <a routerLink="login" routerLinkActive="font-bold">Accedi</a>
     </ng-container>
     <ng-container *ngIf="isLogged">
-      <button (click)="logout()" class="px-2 py-1 border rounded">Esci</button>
+      <button (click)="logout()" class="px-3 py-1 border rounded">Esci</button>
     </ng-container>
-
-    🛒 <span *ngIf="count">{{ count }}</span>
   </div>
 </nav>

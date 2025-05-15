@@ -1,33 +1,41 @@
-<form
-  [formGroup]="form"
-  (ngSubmit)="onSubmit()"
-  class="max-w-sm mx-auto space-y-4 mt-8"
->
-  <div>
-    <label>Username</label>
-    <input formControlName="username" class="w-full border p-2 rounded" />
-    <div
-      *ngIf="form.get('username')?.touched && form.get('username')?.invalid"
-      class="text-red-600 text-sm"
-    >
-      Username obbligatorio.
+<div class="form-container mx-auto p-6 bg-white rounded-lg shadow-md">
+  <h2 class="text-2xl font-bold mb-4 text-center">Login</h2>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="space-y-4">
+    <div>
+      <label>Username</label>
+      <input formControlName="username" class="w-full border p-2 rounded" />
+      <div
+        *ngIf="form.get('username')?.touched && form.get('username')?.invalid"
+        class="text-red-600 text-sm"
+      >
+        Username obbligatorio.
+      </div>
     </div>
-  </div>
-  <div>
-    <label>Password</label>
-    <input
-      type="password"
-      formControlName="password"
-      class="w-full border p-2 rounded"
-    />
-    <div
-      *ngIf="form.get('password')?.touched && form.get('password')?.invalid"
-      class="text-red-600 text-sm"
-    >
-      Password obbligatoria.
+    <div>
+      <label>Password</label>
+      <input
+        type="password"
+        formControlName="password"
+        class="w-full border p-2 rounded"
+      />
+      <div
+        *ngIf="form.get('password')?.touched && form.get('password')?.invalid"
+        class="text-red-600 text-sm"
+      >
+        Password obbligatoria.
+      </div>
     </div>
+    <button
+      type="submit"
+      class="w-full py-2 bg-primary text-white rounded-lg font-bold"
+    >
+      Accedi
+    </button>
+  </form>
+  <div
+    *ngIf="loginFailed"
+    class="mt-4 p-4 bg-red-100 border border-red-400 text-red-700 rounded"
+  >
+    Login fallito. Riprova.
   </div>
-  <button type="submit" class="w-full py-2 border rounded font-bold">
-    Accedi
-  </button>
-</form>
+</div>

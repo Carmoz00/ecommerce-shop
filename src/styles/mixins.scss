@@ -1,14 +1,19 @@
+@use "variables" as vars; // Importa _variables.scss con il namespace 'vars'
+
 @mixin respond-to($break) {
   @if $break == sm {
-    @media (min-width: $sm) {
+    @media (min-width: vars.$sm) {
+      // Usa vars.$sm
       @content;
     }
   } @else if $break == md {
-    @media (min-width: $md) {
+    @media (min-width: vars.$md) {
+      // Usa vars.$md
       @content;
     }
   } @else if $break == lg {
-    @media (min-width: $lg) {
+    @media (min-width: vars.$lg) {
+      // Usa vars.$lg
       @content;
     }
   }

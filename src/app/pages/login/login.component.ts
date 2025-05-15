@@ -17,6 +17,7 @@ import { AuthService } from '../../services/auth.service';
 })
 export class LoginComponent implements OnInit {
   form!: FormGroup;
+  loginFailed = false; // ← qui
   returnUrl = '/';
 
   constructor(
@@ -43,6 +44,7 @@ export class LoginComponent implements OnInit {
       });
     } else {
       this.form.markAllAsTouched();
+      this.loginFailed = true; // ← segnala
     }
   }
 }

@@ -1,18 +1,22 @@
 <article
-  class="border p-4 rounded-lg transition-all"
-  [ngClass]="{ 'border-secondary': hover }"
-  (mouseenter)="hover = true"
-  (mouseleave)="hover = false"
+  class="product-card p-4 rounded-lg bg-white shadow hover:shadow-lg transition-all flex flex-col justify-between"
 >
   <img
-    [src]="product.imageUrl"
+    [src]="'assets/images/' + product.imageUrl"
     alt="{{ product.name }}"
-    class="w-full h-32 object-cover mb-2"
+    class="w-full h-48 object-cover mb-4"
   />
-  <h3 class="font-semibold">{{ product.name }}</h3>
-  <p class="text-sm mb-2">{{ product.description }}</p>
-  <div class="flex justify-between items-center">
-    <span class="font-bold">€ {{ product.price }}</span>
-    <button (click)="onAdd()" class="px-2 py-1 border rounded">Aggiungi</button>
+  <div class="flex-grow">
+    <h3 class="font-semibold text-xl mb-2">{{ product.name }}</h3>
+    <p class="text-gray-600 mb-4">{{ product.description }}</p>
+  </div>
+  <div class="mt-4 flex justify-between items-center">
+    <span class="font-bold text-lg">€ {{ product.price }}</span>
+    <button
+      (click)="onAdd()"
+      class="px-4 py-2 bg-primary text-white rounded w-full ml-4"
+    >
+      Aggiungi
+    </button>
   </div>
 </article>

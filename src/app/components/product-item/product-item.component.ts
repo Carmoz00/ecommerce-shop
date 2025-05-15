@@ -5,7 +5,7 @@ import { Product } from '../../models/product.model';
 @Component({
   selector: 'app-product-item',
   standalone: true,
-  imports: [CommonModule, NgClass],
+  imports: [CommonModule],
   templateUrl: './product-item.component.html',
   styleUrls: ['./product-item.component.scss'],
 })
