@@ -1,0 +1,21 @@
+@use "styles/variables" as vars;
+@use "styles/mixins" as mixins;
+
+nav {
+  background: vars.$primary;
+  color: white;
+
+  a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+
+    &.font-bold {
+      border-bottom: 2px solid $secondary;
+    }
+  }
+
+  .ml-auto {
+    margin-left: auto;
+  }
+}

@@ -1,0 +1,15 @@
+@mixin respond-to($break) {
+  @if $break == sm {
+    @media (min-width: $sm) {
+      @content;
+    }
+  } @else if $break == md {
+    @media (min-width: $md) {
+      @content;
+    }
+  } @else if $break == lg {
+    @media (min-width: $lg) {
+      @content;
+    }
+  }
+}
