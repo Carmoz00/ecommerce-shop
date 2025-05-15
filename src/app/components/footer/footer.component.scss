@@ -1,0 +1,9 @@
+@use "styles/variables" as vars;
+@use "styles/mixins" as mixins;
+
+footer {
+  padding: 1rem;
+  text-align: center;
+  background: darken($primary, 10%);
+  color: white;
+}

@@ -1,4 +1,9 @@
-<article class="border p-4 rounded-lg">
+<article
+  class="border p-4 rounded-lg transition-all"
+  [ngClass]="{ 'border-secondary': hover }"
+  (mouseenter)="hover = true"
+  (mouseleave)="hover = false"
+>
   <img
     [src]="product.imageUrl"
     alt="{{ product.name }}"

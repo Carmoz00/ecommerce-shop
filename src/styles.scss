@@ -1,6 +1,36 @@
+// colori
+$primary: #1e40af;
+$secondary: #f59e0b;
+$danger: #dc2626;
+
+// tipografia
+$font-base: "Roboto", sans-serif;
+
+// breakpoint
+$sm: 640px;
+$md: 768px;
+$lg: 1024px;
+
+@mixin respond-to($break) {
+  @if $break == sm {
+    @media (min-width: $sm) {
+      @content;
+    }
+  } @else if $break == md {
+    @media (min-width: $md) {
+      @content;
+    }
+  } @else if $break == lg {
+    @media (min-width: $lg) {
+      @content;
+    }
+  }
+}
+
 body {
   margin: 0;
-  font-family: Roboto, sans-serif;
+  font-family: $font-base;
+  background-color: #f3f4f6;
 }
 main {
   min-height: calc(100vh - 120px); // adatta all’altezza header+footer

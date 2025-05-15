@@ -1,0 +1,12 @@
+@use "styles/variables" as vars;
+@use "styles/mixins" as mixins;
+
+section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+
+  @include mixins.respond-to(md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
