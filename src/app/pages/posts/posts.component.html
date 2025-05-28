@@ -1,0 +1,12 @@
+<div class="p-6">
+  <h2 class="text-2xl font-bold mb-4">Elenco Post</h2>
+  <ul *ngIf="posts$ | async as posts; else loading" class="space-y-4">
+    <li *ngFor="let post of posts" class="p-4 border rounded hover:shadow">
+      <h3 class="font-semibold">{{ post.title }}</h3>
+      <p class="text-sm text-gray-600">{{ post.body }}</p>
+    </li>
+  </ul>
+  <ng-template #loading>
+    <p>Caricamento in corso…</p>
+  </ng-template>
+</div>

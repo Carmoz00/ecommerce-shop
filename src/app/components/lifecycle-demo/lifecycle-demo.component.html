@@ -1,0 +1,10 @@
+<div class="p-4 bg-gray-50 rounded space-y-2">
+  <h3>Lifecycle Demo</h3>
+  <p>Valore Input(): {{ value }}</p>
+  <p *ngIf="lastChange">
+    ngOnChanges → da {{ lastChange.previousValue }} a
+    {{ lastChange.currentValue }}
+  </p>
+  <p>ngDoCheck chiamato: {{ doCheckCount }} volte</p>
+  <p #statusParagraph class="italic text-blue-600"></p>
+</div>
